@@ -12,7 +12,8 @@ class Tile extends React.Component {
 	
 
 
-	render() {
+	render() { 
+		
 		const { text } = this.props
 		return (
 			<div>{text}</div>
