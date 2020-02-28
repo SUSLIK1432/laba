@@ -1,0 +1,31 @@
+.flex_start {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+.flex_end {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+
+.flex_center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.flex_arrow {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.__App_tile_collection {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	max-width: 800px;
+}

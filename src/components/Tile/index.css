@@ -1,0 +1,23 @@
+.__Tile_block {
+
+	height: 200px; /* Высота блока */
+    min-width: 200px; /* Ширина блока */
+    background: #FFFFFF;
+	border: 2px solid #5383BA;
+	border-radius: 20px;
+	margin: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.__Tile_title {
+	text-align: center;
+	font-size: 24px;
+	line-height: 28px;
+	color: #5383BA;
+}
+.__Tile_icon {
+	text-align: center;
+	margin: 5px;
+
+}

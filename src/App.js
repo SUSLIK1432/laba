@@ -1,5 +1,6 @@
 import React from 'react';
 import Tile from './components/Tile/Tile'
+//import Icons from './image/clipboard-list-solid.svg'
 
 class App extends React.Component {
 
@@ -14,9 +15,28 @@ class App extends React.Component {
 
 	render() {
 		return (
-			<div>
-				<Tile text="текст какой-то"/>
-				<Tile text="текст другой"/>
+			<div className="flex_center">
+				<div className="__App_tile_collection">
+					<Tile 
+						text="Приемы" 
+						icons="X"
+					/>
+					<Tile 
+						text="События"
+					/>
+					<Tile 
+						text="Оповещения"
+					/>
+					<Tile 
+						text="Сообщения"
+					/>
+					<Tile 
+						text="Клиенты"
+					/>
+					<Tile 
+						text="Сотрудники"
+					/>
+				</div>
 			</div>
 		)
 	}
