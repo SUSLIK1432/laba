@@ -1,5 +1,10 @@
 import React from 'react';
-import Tile from './components/Tile/Tile'
+//import Tile from './components/Tile/Tile'
+import Stack from './components/Navigator/Stack'
+
+
+import First from './Pages/First'
+import Second from './Pages/Second'
 //import Icons from './image/clipboard-list-solid.svg'
 
 class App extends React.Component {
@@ -15,29 +20,10 @@ class App extends React.Component {
 
 	render() {
 		return (
-			<div className="flex_center">
-				<div className="__App_tile_collection">
-					<Tile 
-						text="Приемы" 
-						icons="X"
-					/>
-					<Tile 
-						text="События"
-					/>
-					<Tile 
-						text="Оповещения"
-					/>
-					<Tile 
-						text="Сообщения"
-					/>
-					<Tile 
-						text="Клиенты"
-					/>
-					<Tile 
-						text="Сотрудники"
-					/>
-				</div>
-			</div>
+			<Stack activePage="first">
+				<First id="first"/>
+				<Second id="second"/>
+			</Stack>
 		)
 	}
 }
