@@ -29,3 +29,8 @@
 	flex-wrap: wrap;
 	max-width: 800px;
 }
+.allIcons {
+	height: 100px;
+	width: 100px;
+	color: #5383BA;
+}

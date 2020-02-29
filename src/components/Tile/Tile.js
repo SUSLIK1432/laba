@@ -16,10 +16,10 @@ class Tile extends React.Component {
 
 
 	render() { 
-		const {text} = this.props
+		const {text, onClick} = this.props
 		const {icons} = this.props
 		return (
-				<div className="__Tile_block">
+				<div className="__Tile_block" onClick={onClick}>
 					<div>
 						<div className="__Tile_icon">{icons}</div>
 						<div className="__Tile_title">{text}</div>
