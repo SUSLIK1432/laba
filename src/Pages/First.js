@@ -2,12 +2,16 @@
 import React from 'react';
 import Page from '../components/Navigator/Page'
 import Tile from '../components/Tile/Tile'
-import { ReactComponent as СalendarCheckSolid } from '../image/calendar-check-solid.svg'
-import { ReactComponent as СommentDotsSolid } from '../image/comment-dots-solid.svg'
+import Header from '../components/Header/Header'
+import Button from '../components/Button/Button'
+
+import { ReactComponent as CalendarCheckSolid } from '../image/calendar-check-solid.svg'
+import { ReactComponent as CommentDotsSolid } from '../image/comment-dots-solid.svg'
 import { ReactComponent as StarSolid } from '../image/star-solid.svg'
 import { ReactComponent as VolumeDownSolid } from '../image/volume-down-solid.svg'
 import { ReactComponent as UsersSolid } from '../image/users-solid.svg'
 import { ReactComponent as UserMdSolid } from '../image/user-md-solid.svg'
+import { ReactComponent as HomeSolid } from '../image/home-solid.svg'
 
 class First extends React.Component {
 
@@ -21,14 +25,23 @@ class First extends React.Component {
 
 
 	render() { 
-		const { id, navigator } = this.props	
+		const { id, navigator} = this.props	
 		return (	
+			
 			<Page id={id}>
+				<Header
+					text1="Домашняя" 
+					icons={ <HomeSolid className="__Header_icon"/> }
+					text2="Иванов Иван Иванович" 
+					logout={ <Button text="Выйти"/> }
+
+				/>
 				<div className="flex_center">
+
 					<div className="__App_tile_collection">
 						<Tile 
 							text="Приемы" 
-							icons={ <СalendarCheckSolid className="allIcons"/> }
+							icons={ <CalendarCheckSolid className="allIcons"/> }
 							onClick={() => { navigator.goPage("second") }}
 						/>
 						<Tile 
@@ -41,7 +54,7 @@ class First extends React.Component {
 						/>
 						<Tile 
 							text="Сообщения"
-							icons={ <СommentDotsSolid className="allIcons"/> }
+							icons={ <CommentDotsSolid className="allIcons"/> }
 						/>
 						<Tile 
 							text="Клиенты"

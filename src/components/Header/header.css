@@ -1,0 +1,38 @@
+.__Header_mainBlock {
+	width: 100%;
+	height: 120px;
+	background-color: #5383BA;
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 20px;
+}
+
+.__Header_leftBlock {
+	display: flex;
+	align-items: center;
+	margin: 10px;
+	
+	
+
+}
+.__Header_rightBlock{
+	display: flex;
+	align-items: center;
+	margin: 10px;
+	
+}
+.__Header_icon {
+	height: 70px;
+	width: 70px;
+	color: #FFF;
+	align-items: center;
+
+	
+}
+.__Header_title {
+	font-size: 32px;
+	margin-left: 20px;
+	margin-right: 20px;
+	color: #FFF;
+}
+

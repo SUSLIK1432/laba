@@ -1,5 +1,5 @@
 import React from 'react';
-import './index.css';
+import './tile.css';
 //import 'font-awesome/css/font-awesome.min.css';
 
 
