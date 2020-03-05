@@ -21,3 +21,9 @@
 					/>
 				</div>
 			</div>
+
+
+			<div>
+						<div className="__Header_icon">{icons}</div>
+						<div className="__Header_title">{text}</div>
+					</div>
