@@ -48,3 +48,14 @@ th {
 thead {
 	background-color: #5383BA !important;
 }
+
+.Appointments-FilterForm{
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+
+}
+
+.Appointments-FilterField{
+	margin-left: 20px;
+}
