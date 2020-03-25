@@ -24,7 +24,7 @@ import React  from 'react'
       onChange = e => {
           const value = e.target.checked
           const { name, onChange: cb } = this.props
-          cb(name, value)
+          cb (name, value) 
       }
   
       render() {

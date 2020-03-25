@@ -9,8 +9,11 @@ import Table from '../components/Table/Table'
 import TextField from '../components/TextField/TextField'
 import DateField from '../components/DateField/DateField'
 import CheckboxField from '../components/CheckboxField/CheckboxField'
+import SelectFild from '../components/SelectFild/SelectFild'
+import SelectHolderName from '../components/SelectHolderName/SelectHolderName'
+import SelectCompliences from '../components/SelectCompliences/SelectCompliences'
 import {filter} from 'underscore'
-import DatePicker from "react-datepicker";
+//import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 import { appointments as data } from '../lib/MockData'
@@ -23,14 +26,15 @@ export default class Second extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-
 			filter: {
-			//text2: '',
-        startDate: null,
-        endDate: null,
-        clientName: '',
-        onlyMe: false
-      }
+				status: 'all',
+		        startDate: null,
+		        endDate: null,
+		        clientName: '',
+		        onlyMe: false,
+		        holderName: '',
+                compliences:'all',
+      		}
 		};
 	}
 
@@ -51,25 +55,51 @@ export default class Second extends React.Component {
       })
     }
   
+    onChangeFilterSelectFild = (e) => {
+    	const { filter } = this.state
+    	this.setState({
+    		filter: {
+    			...filter,
+    			status:e.currentTarget.value
+    		}
+    	})
+    }
 
+    
+
+    onChangeFilterSelectCompliences = (e) => {
+        const { filter } = this.state
+        this.setState({
+            filter: {
+                ...filter,
+                compliences:e.currentTarget.value
+            }
+        })
+    }
 	
 
-	render() { 
-		const { id } = this.props	
+	render() {
+		const { id } = this.props;
 		const {
-		//text2,
+		status,
         startDate,
         endDate,
         clientName,
         onlyMe,
+        holderName,
+        compliences,
       } = this.state.filter
   
-      let filtered = filter(data, o => {
-        return (startDate ? o.date >= startDate : true) && 
-        (endDate ? o.date <= endDate : true) && 
-        (clientName ? (clientName.length > 2 ? o.clientName.includes(clientName) : true) : true) && 
-        (onlyMe ? o.holderName === USER : true)
-      })
+		let filtered = filter(data, (o) => {
+			return (
+				(startDate ? o.date >= startDate : true) && (endDate ? o.date <= endDate : true) &&
+				(clientName ? (clientName.length > 2 ? o.clientName.includes(clientName) : true) : true) && 
+				(onlyMe ? o.holderName === USER : true) &&
+				(o.status.indexOf(status) !== -1 ||  status === 'all') &&
+                (o.compliences.indexOf(compliences) !== -1 ||  compliences === 'all') &&
+				(holderName ? (holderName.length > 2 ? o.holderName.includes(holderName) : true) : true)
+			)
+		})
 
 		return (	
 			<Page id={id}>
@@ -110,6 +140,28 @@ export default class Second extends React.Component {
                         className='Appointments-FilterField'
                         onChange={this.onChangeFilterField}
                 />
+                <SelectFild
+                		name='status'
+                		data={data}
+                		className='Appointments-FilterField'
+                		onChange={this.onChangeFilterSelectFild}
+                />
+
+               <SelectHolderName
+                        name='holderName'
+                        value={holderName}
+                        placeholder='Принимающий'
+                        className='Appointments-FilterField'
+                        onChange={this.onChangeFilterField}
+                />
+
+                <SelectCompliences
+                        name='compliences'
+                        data={data}
+                        className='Appointments-FilterField'
+                        onChange={this.onChangeFilterSelectCompliences}
+                />
+
                 <CheckboxField
                         name='onlyMe'
                         label='Только я'
@@ -163,6 +215,5 @@ export default class Second extends React.Component {
 		)
 	}
 }
-
 
 //export default Appointments;

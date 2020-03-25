@@ -49,7 +49,7 @@ class Table extends React.Component {
        hasHover,
        noDataText,
      } = this.props
-
+     
      return (
        <div>
          <BootstrapTable className="__Table"
